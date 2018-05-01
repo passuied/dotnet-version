@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  For more info on this file format visit http://docs.nuget.org/docs/reference/nuspec-reference.
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">  
+  <metadata>
+    <id>dotnetversion</id>
+    <version>$version$</version>
+    <authors>Patrick Assuied</authors>
+    <owners>Patrick Assuied</owners>
+    <title>DotNet Version CLI extension</title>
+    <summary>DotNet CLI extension tool for versioning</summary>
+    <description>A DotNet CLI extension allowing versioning at solution or project level.</description>
+    <projectUrl>https://github.com/passuied/dotnet-version</projectUrl>
+    <packageSourceUrl>https://github.com/passuied/dotnet-version</packageSourceUrl>
+    <tags>dotnet version cli .net core</tags>
+    <releaseNotes>
+      Documentation and release notes can be found at https://github.com/passuied/dotnet-version
+    </releaseNotes>
+  <dependencies>
+  </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\chocolateyInstall.ps1" target="tools"/>
+    <file src="tools\chocolateyUninstall.ps1" target="tools"/>
+    <file src="tools\license.txt" target="tools"/>
+	<file src="..\..\artifacts\artifact.zip" target="tools"/>
+  </files>
+</package>

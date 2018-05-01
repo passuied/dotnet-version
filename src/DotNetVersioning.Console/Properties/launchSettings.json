@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "dotnet-version": {
+      "commandName": "Project",
+      "commandLineArgs": "minor",
+      "workingDirectory": "E:\\Git\\dotnet-version\\testdata"
+    }
+  }
+}

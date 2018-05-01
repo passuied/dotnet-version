@@ -3,9 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>DotNet.Versioning.Core</RootNamespace>
+    <AssemblyName>DotNetVersioning.Core</AssemblyName>
   </PropertyGroup>
-
-  <ItemGroup>
-  </ItemGroup>
 
 </Project>

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <PackageType>DotnetCliTool</PackageType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>DotNet.Versioning</RootNamespace>
+    <AssemblyName>DotNetVersioning.Console</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DotNetVersioning.Core\DotNetVersioning.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="dotnet-version.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
