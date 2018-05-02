@@ -16,7 +16,7 @@
 
 ## Usage
 ```
-dotnet version <version> | major | minor | patch
+dotnet version [<version> | major | minor | patch]
 ```
 - When using `<version>`, all csproj files will be udpated to the given <version>
 - When using `major`, all csproj files will be upgraded to the next major version
