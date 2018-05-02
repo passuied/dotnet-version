@@ -4,7 +4,7 @@
 -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">  
   <metadata>
-    <id>dotnetversion</id>
+    <id>dotnet-version</id>
     <version>$version$</version>
     <authors>Patrick Assuied</authors>
     <owners>Patrick Assuied</owners>

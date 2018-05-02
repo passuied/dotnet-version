@@ -11,7 +11,7 @@
 1. Follow instructions about installing Chocolatey [here](https://chocolatey.org/install)
 2. Run the following command
 ```
-> choco install dotnetversion
+> choco install dotnet-version
 ```
 
 ## Usage

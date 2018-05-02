@@ -3,7 +3,7 @@ param(
 )
 
 
-choco pack ../src/DotNetVersioning.Choco/dotnetversion.nuspec --version=$version
+choco pack ../src/DotNetVersioning.Choco/dotnet-version.nuspec --version=$version
 
 
 

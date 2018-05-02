@@ -1,1 +1,1 @@
-choco uninstall dotnetversion -y
+choco uninstall dotnet-version -y
