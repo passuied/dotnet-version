@@ -1,4 +1,5 @@
 
 $appFolder = "$env:systemdrive\tools\dotnet-version"
 
-rmdir $appFolder /S /Q
+rmdir /S /Q $appFolder
+
