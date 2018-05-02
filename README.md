@@ -7,7 +7,7 @@
 - dotnet-version follows semver 2.0 (see https://semver.org/)
 
 ## Install
-- dotnet-version is available via Chocolatey as `dotnetversion` (https://chocolatey.org/)
+- dotnet-version is available via Chocolatey (https://chocolatey.org/)
 1. Follow instructions about installing Chocolatey [here](https://chocolatey.org/install)
 2. Run the following command
 ```
