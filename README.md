@@ -34,7 +34,7 @@ dotnet version <version> | major | minor | patch
   - Navigate to ./choco folder
   - Create package:
   ```
-  > .\ChocoPack.ps1
+  > .\ChocoPack.ps1 -version <version>
   ```
   - Install package
   ```
@@ -47,7 +47,7 @@ dotnet version <version> | major | minor | patch
   - Open a Powershell terminal as Administrator
   - Navigate to ./choco folder
   ```
-  > .\ChocoPush.ps1
+  > .\ChocoPush.ps1 -version <version>
   ```
 - To uninstall
   - Open a Powershell terminal as Administrator
