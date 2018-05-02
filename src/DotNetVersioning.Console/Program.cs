@@ -53,7 +53,7 @@ namespace DotNet.Versioning
 
         private static void ShowHelp()
         {
-            Console.WriteLine(@"Command: dotnet-version <version> | major | minor | patch");
+            Console.WriteLine(@"Usage: dotnet-version <version> | major | minor | patch");
         }
     }
 }
