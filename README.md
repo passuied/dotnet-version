@@ -10,9 +10,9 @@
 - dotnet-version is available via Chocolatey as `dotnetversion` (https://chocolatey.org/)
 1. Follow instructions about installing Chocolatey [here](https://chocolatey.org/install)
 2. Run the following command
-	```
-	> choco install dotnetversion
-	```
+```
+> choco install dotnetversion
+```
 
 ## Usage
 ```
@@ -26,9 +26,9 @@ dotnet version <version> | major | minor | patch
 ## Contribute
 ### Build and package
 - Run the following command:
-	```
-	> .\build.cmd
-	```
+```
+> .\build.cmd
+```
 - To install from local source:
   - Open a Powershell terminal as Administrator
   - Navigate to ./choco folder

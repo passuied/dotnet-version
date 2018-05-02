@@ -20,6 +20,18 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetVersioning.Tests", "src\DotNetVersioning.Tests\DotNetVersioning.Tests.csproj", "{966557F3-0F90-490A-8231-0EBA3CB1752E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "choco", "choco", "{D82F7DC2-B223-4DE0-8C60-048791DF5AFB}"
+	ProjectSection(SolutionItems) = preProject
+		choco\ChocoPack.ps1 = choco\ChocoPack.ps1
+		choco\ChocoPush.templ.ps1 = choco\ChocoPush.templ.ps1
+		choco\ChocoTest.ps1 = choco\ChocoTest.ps1
+		choco\ChocoUninstall.ps1 = choco\ChocoUninstall.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{4CAB8D3F-ED1F-4A61-983B-B83EF0F51721}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
