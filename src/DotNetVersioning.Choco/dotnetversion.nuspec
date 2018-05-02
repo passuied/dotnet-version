@@ -24,6 +24,7 @@
     <file src="tools\chocolateyInstall.ps1" target="tools"/>
     <file src="tools\chocolateyUninstall.ps1" target="tools"/>
     <file src="tools\license.txt" target="tools"/>
+	<file src="tools\VERIFICATION.txt" target="tools"/>
 	<file src="..\..\artifacts\artifact.zip" target="tools"/>
   </files>
 </package>

@@ -29,3 +29,30 @@ dotnet version <version> | major | minor | patch
 	```
 	> .\build.cmd
 	```
+- To install from local source:
+  - Open a Powershell terminal as Administrator
+  - Navigate to ./choco folder
+  - Create package:
+  ```
+  > .\ChocoPack.ps1
+  ```
+  - Install package
+  ```
+  > .\ChocoTest.ps1
+  ```
+- To push an update to Chocolatey
+  - Edit ./choco/ChocoPush.templ.ps1
+  - Contact passuied@csod.com to get the API Key
+  - Replace placeholder with API key
+  - Open a Powershell terminal as Administrator
+  - Navigate to ./choco folder
+  ```
+  > .\ChocoPush.ps1
+  ```
+- To uninstall
+  - Open a Powershell terminal as Administrator
+  - Navigate to ./choco folder
+  ```
+  > .\ChocoUninstall.ps1
+  ```
+  
