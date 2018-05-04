@@ -1,5 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <PackageType>DotnetCliTool</PackageType>
@@ -7,16 +7,14 @@
     <RootNamespace>DotNet.Versioning</RootNamespace>
     <AssemblyName>DotNetVersioning.Console</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\DotNetVersioning.Core\DotNetVersioning.Core.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="dotnet-version.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>

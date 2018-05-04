@@ -1,13 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
-
     <RootNamespace>DotNet.Versioning.Tests</RootNamespace>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Cornerstone.Xunit2.AutoFixture.AutoMoq" Version="4.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0" />
@@ -15,13 +13,10 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\DotNetVersioning.Core\DotNetVersioning.Core.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
-
 </Project>

@@ -7,7 +7,6 @@ namespace DotNet.Versioning
 {
     class Program
     {
-        // dotnet-version <version> | major | minor | patch
         static void Main(string[] args)
         {
             if (args.Length != 1)
@@ -53,7 +52,7 @@ namespace DotNet.Versioning
 
         private static void ShowHelp()
         {
-            Console.WriteLine(@"Usage: dotnet-version [<version> | major | minor | patch]");
+            Console.WriteLine(@"Usage: dotnet-version [<version> | major | minor | patch | build]");
         }
     }
 }

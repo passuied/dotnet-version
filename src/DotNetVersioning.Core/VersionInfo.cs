@@ -10,11 +10,12 @@ namespace DotNet.Versioning.Core
     /// </summary>
     public class VersionInfo
     {
-        public VersionInfo(int major, int minor=0, int patch=0, string prerelease=null)
+        public VersionInfo(int major, int minor=0, int patch=0, int build=0, string prerelease=null)
         {
             this.Major = major;
             this.Minor = minor;
             this.Patch = patch;
+            this.Build = build;
             this.Prerelease = prerelease;
         }
         public int Major { get; private set; }
@@ -22,7 +23,7 @@ namespace DotNet.Versioning.Core
         public int Minor { get; private set; }
 
         public int Patch { get; private set; }
-
+        public int Build { get; }
         public string Prerelease { get; private set; }
 
         public VersionInfo Up(string command)
@@ -30,6 +31,7 @@ namespace DotNet.Versioning.Core
             int major = this.Major;
             int minor = this.Minor;
             int patch = this.Patch;
+            int build = this.Build;
             switch (command.ToLowerInvariant())
             {
                 case VersionCommandType.Major:
@@ -37,17 +39,25 @@ namespace DotNet.Versioning.Core
                         major++;
                         minor = 0;
                         patch = 0;
+                        build = 0;
                     }
                     break;
                 case VersionCommandType.Minor:
                     {
                         minor++;
                         patch = 0;
+                        build = 0;
                     }
                     break;
                 case VersionCommandType.Patch:
                     {
                         patch++;
+                        build = 0;
+                    }
+                    break;
+                case VersionCommandType.Build:
+                    {
+                        build++;
                     }
                     break;
                 default:
@@ -61,11 +71,11 @@ namespace DotNet.Versioning.Core
                     }
 
             }
-            return new VersionInfo(major, minor, patch);
+            return new VersionInfo(major, minor, patch, build);
         }
 
         
-        private static readonly Regex _rgxVersion = new Regex(@"^(?<major>\d+)(\.(?<minor>\d+))?(\.(?<patch>\d+))?(\-(?<pre>[0-9A-Za-z\-\.]+))?$", RegexOptions.IgnoreCase|RegexOptions.Compiled|RegexOptions.CultureInvariant);
+        private static readonly Regex _rgxVersion = new Regex(@"^(?<major>\d+)(\.(?<minor>\d+))?(\.(?<patch>\d+))?(\.(?<build>\d+))?(\-(?<pre>[0-9A-Za-z\-\.]+))?$", RegexOptions.IgnoreCase|RegexOptions.Compiled|RegexOptions.CultureInvariant);
 
         public static bool TryParse(string version, out VersionInfo result)
         {
@@ -90,6 +100,13 @@ namespace DotNet.Versioning.Core
                     patch = Convert.ToInt32(mPatch.Value);
                 }
 
+                var mBuild = m.Groups["build"];
+                var build = 0;
+                if (mBuild.Success)
+                {
+                    build = Convert.ToInt32(mBuild.Value);
+                }
+
                 string pre = null;
                 var mPre = m.Groups["pre"];
                 if (mPre.Success)
@@ -97,7 +114,7 @@ namespace DotNet.Versioning.Core
                     pre = mPre.Value;
                 }
 
-                result = new VersionInfo(major, minor, patch, pre);
+                result = new VersionInfo(major, minor, patch, build, pre);
                 return true;
 
             }
@@ -106,7 +123,9 @@ namespace DotNet.Versioning.Core
 
         public override string ToString()
         {
-            return $"{Major}.{Minor}.{Patch}{(!string.IsNullOrEmpty(Prerelease)?'-'+Prerelease: string.Empty)}";
+            var sBuild = Build > 0 ? $".{Build}" : string.Empty;
+            string sPre = (!string.IsNullOrEmpty(Prerelease) ? '-' + Prerelease : string.Empty);
+            return $"{Major}.{Minor}.{Patch}{sBuild}{sPre}";
         }
         public static VersionInfo Parse(string version)
         {
@@ -117,7 +136,7 @@ namespace DotNet.Versioning.Core
             }
             else
             {
-                throw new ArgumentException("Invalid Format. Expected: <major>[.<minor>][.<patch>][-<pre>]", nameof(version));
+                throw new ArgumentException("Invalid Format. Expected: <major>[.<minor>][.<patch>][.<build>][-<pre>]", nameof(version));
             }
         }
     }

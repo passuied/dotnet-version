@@ -16,12 +16,13 @@
 
 ## Usage
 ```
-dotnet version [<version> | major | minor | patch]
+dotnet version [<version> | major | minor | patch | build]
 ```
 - When using `<version>`, all csproj files will be udpated to the given <version>
 - When using `major`, all csproj files will be upgraded to the next major version
 - When using `minor`, all csproj files will be upgraded to the next minor version
 - When using `patch`, all csproj files will be upgraded to the next patch version
+- When using `build`, all csproj files will be upgraded to the next build version
 
 ## Contribute
 ### Build and package
