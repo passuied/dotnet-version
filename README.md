@@ -7,12 +7,17 @@
 - dotnet-version follows semver 2.0 (see https://semver.org/)
 
 ## Install
-- dotnet-version is available via Chocolatey (https://chocolatey.org/)
-1. Follow instructions about installing Chocolatey [here](https://chocolatey.org/install)
-2. Run the following command
-```
-> choco install dotnet-version
-```
+- As of version 1.2, dotnet-version can now be installed as a .NET tool global tool
+  ```
+  > dotnet tool install DotNetVersioning.Tool -g
+  ```
+- Previous versions
+    - dotnet-version is available via Chocolatey (https://chocolatey.org/)
+    1. Follow instructions about installing Chocolatey [here](https://chocolatey.org/install)
+    2. Run the following command
+    ```
+    > choco install dotnet-version
+    ```
 
 ## Usage
 ```
@@ -24,36 +29,3 @@ dotnet version [<version> | major | minor | patch | build]
 - When using `patch`, all csproj files will be upgraded to the next patch version
 - When using `build`, all csproj files will be upgraded to the next build version
 
-## Contribute
-### Build and package
-- Run the following command:
-```
-> .\build.cmd
-```
-- To install from local source:
-  - Open a Powershell terminal as Administrator
-  - Navigate to ./choco folder
-  - Create package:
-  ```
-  > .\ChocoPack.ps1 -version <version>
-  ```
-  - Install package
-  ```
-  > .\ChocoTest.ps1
-  ```
-- To push an update to Chocolatey
-  - Edit ./choco/ChocoPush.templ.ps1
-  - Contact passuied@csod.com to get the API Key
-  - Replace placeholder with API key
-  - Open a Powershell terminal as Administrator
-  - Navigate to ./choco folder
-  ```
-  > .\ChocoPush.ps1 -version <version>
-  ```
-- To uninstall
-  - Open a Powershell terminal as Administrator
-  - Navigate to ./choco folder
-  ```
-  > .\ChocoUninstall.ps1
-  ```
-  

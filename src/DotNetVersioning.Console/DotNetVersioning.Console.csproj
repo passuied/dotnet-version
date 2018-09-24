@@ -1,13 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <OutputType>Exe</OutputType>
-    <PackageType>DotnetCliTool</PackageType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>dotnet-version</ToolCommandName>
     <RootNamespace>DotNet.Versioning</RootNamespace>
-    <AssemblyName>DotNetVersioning.Console</AssemblyName>
+    <AssemblyName>DotNetVersioning.Tool</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.1.0</AssemblyVersion>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <FileVersion>$(AssemblyVersion)</FileVersion>
+    <ProductVersion>$(AssemblyVersion)</ProductVersion>
+    <VersionPrefix>$(AssemblyVersion)</VersionPrefix>
+    <PackageId>DotNetVersioning.Tool</PackageId>
+    <Title>.NET CLI tool for versioning</Title>
+    <Authors>Patrick Assuied</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>.NET CLI tool for versioning projects</Description>
+    <PackageProjectUrl>https://github.com/passuied/dotnet-version</PackageProjectUrl>
+    <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
+    <Copyright>Copyright 2018-$(CurrentYear)</Copyright>
+    <PackageTags>dotnet cli version</PackageTags>
+    <PackageReleaseNotes>
+      Release notes available in CHANGELOG.md
+    </PackageReleaseNotes>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\DotNetVersioning.Core\DotNetVersioning.Core.csproj" />

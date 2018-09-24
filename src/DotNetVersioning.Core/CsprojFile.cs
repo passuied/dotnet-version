@@ -18,7 +18,7 @@ namespace DotNet.Versioning.Core
             this._path = path;
             this._xmlDoc = XDocument.Load(path);
 
-            if (_xmlDoc.Root.Name != "Project" || _xmlDoc.Root.Attribute("Sdk") == null || _xmlDoc.Root.Attribute("Sdk").Value != "Microsoft.NET.Sdk")
+            if (_xmlDoc.Root.Name != "Project" || _xmlDoc.Root.Attribute("Sdk") == null || !_xmlDoc.Root.Attribute("Sdk").Value.StartsWith("Microsoft.NET.Sdk", StringComparison.OrdinalIgnoreCase))
             {
                 throw new ArgumentException($"Invalid Csproj file '{path}'. File should be a valid Microsoft.NET.Sdk file.");
             }
